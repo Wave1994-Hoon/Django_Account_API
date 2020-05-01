@@ -18,13 +18,3 @@ SECRET_KEY = {
     'secret' : 'as#9%kh!=uux9f5n3lx9!e4@n17$+)lo9i3r#&rr2cfhkz0fn-',
     'algorithm' : 'HS256' 
 }
-
-CACHES = {  
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1", 
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-        }
-    }
-}
