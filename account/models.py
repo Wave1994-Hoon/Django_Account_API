@@ -14,7 +14,7 @@ class Account(models.Model):
 class AccountInfo(models.Model):
     account      = models.ForeignKey(Account, on_delete=models.CASCADE)
     password     = models.CharField(max_length=400)
-    phone_number = models.IntegerField(max_length=20)
+    phone_number = models.CharField(max_length=20)
     nickname     = models.CharField(max_length=30)
     is_deleted   = models.BooleanField(default=False)
     created_at   = models.DateTimeField(auto_now_add=True)
@@ -24,9 +24,5 @@ class AccountInfo(models.Model):
         db_table = 'accounts_info'
 
 
-class TokenBlackList(models.Model):
-    access_token = models.CharField(max_length=500)
 
-    class Meta:
-        db_table = 'token_black_list'
 
