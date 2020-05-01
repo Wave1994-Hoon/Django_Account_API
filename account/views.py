@@ -79,6 +79,7 @@ class SignIn(View):
 class AccountView(View):
     @Login_Check
     def get(self, request):
+        ''' 단일 회원정보 조회 '''
         try:
             # profile = Account.objects.filter(id=request.user).values('name', 'gender')
             profile = Account.objects.get(id=request.user)
@@ -101,6 +102,7 @@ class AccountView(View):
 
 class AccountList(View):
     def get(self, request):
+        ''' 회원정보 리스트로 조회 '''
         offset = int(request.GET.get('offset', 0))
         limit  = int(request.GET.get('limit', 5))
 
@@ -111,6 +113,7 @@ class AccountList(View):
 
 class AccountSearch(View):
     def post(self, request):
+        ''' 회원정보 검색 '''
         try:
             keywords     = {}
             account_info = []
