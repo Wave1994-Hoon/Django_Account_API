@@ -81,7 +81,6 @@ class AccountView(View):
     def get(self, request):
         ''' 단일 회원정보 조회 '''
         try:
-            # profile = Account.objects.filter(id=request.user).values('name', 'gender')
             profile = Account.objects.get(id=request.user)
             
             profile_data = {
